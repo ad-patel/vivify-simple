@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "Vivify",
+    "description": "Chrome extension that displays an inspirational quote, notes bar, and quick links to personal Google sites!",
+    "version": "1.0",
+    "chrome_url_overrides": {
+        "newtab": "newpage.html"
+    },
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "icons":{"128":"icon_128.png"},
+    "permissions": [
+        "tabs", "activeTab"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    }
+}
