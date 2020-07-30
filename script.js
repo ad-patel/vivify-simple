@@ -16171,13 +16171,12 @@ let quotes = [{
 }];
 
 var rand;
-let img, strokeColor, strokeW;
+let img, strokeColor, strokeW, fontNotes, fontQuotes;
 let backgroundColor;
-let pink, yellow, orange, purple, blue, fontQuote;
 
 function preload() {
     img = loadImage("background1.jpg");
-    fontQuote = loadFont("quoteFont.ttf");
+    fontQuotes = loadFont('quoteFont.ttf');
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -16198,7 +16197,8 @@ function draw() {
   let author = quotes[rand].quoteAuthor;
   if (author === "") author = "Unknown";
   textAlign(CENTER);
-  textFont(fontQuote);
+  textFont(fontQuotes);
+  //`"${inputString}" /n/n - ${author} `
   text(
     `"${inputString}" \n\n - ${author}`,
     25,
@@ -16208,6 +16208,7 @@ function draw() {
   );
   textSize(20);
   textAlign(CENTER);
+  fill(0);
   stroke(0);
   strokeWeight(1);
   noFill();
@@ -16238,7 +16239,7 @@ function draw() {
     // mouseY < height - 30
     blank
   ) {
-    strokeColor = backgroundColor;
+    strokeColor = color(225, 252, 252);
     strokeW = 20;
   } else if (
     mouseIsPressed &&
@@ -16251,7 +16252,6 @@ function draw() {
     strokeColor = color(0);
     strokeW = 3;
   }
-  backgroundCircles();
 }
 
 function mouseDragged() {
@@ -16266,3 +16266,4 @@ function mouseDragged() {
     //  line(mouseX, mouseY, 3*width/4+20, pmouseY);
   }
 }
+
